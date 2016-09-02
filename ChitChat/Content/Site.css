@@ -1,6 +1,10 @@
-﻿body {
+﻿html{
+    height: 1000px;
+}
+body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: #f5f8fa;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +25,82 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+#ChitChatNavbar{
+    background-color: #1da1f2;
+}
+#twitterBird{
+    color: white;
+    font-size: 32px;
+}
+#registerLink, #loginLink{
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid rgba(255,255,255,0.3);
+    font-size: 16px;
+    font-weight: 200;
+    padding: 10px 35px;
+    margin-top: 15px;
+}
+#registerLink:hover, #loginLink:hover{
+    background: #fff;
+    color: #1da1f2;
+}
+#loginLink{
+    background-color: rgba(255,255,255,0.3)
+}
+#registerButton{
+    margin-right: 10px;
+}
+
+.navTitle{
+    color: white;
+    position: absolute;
+    margin-top: 15px;
+}
+.navTitle h2{
+    color: white;
+    font-size: 48px;
+    font-weight: 500;
+    margin: 0;
+}
+#navbarContainer{
+    margin: 0 194px;
+    padding:0; 
+}
+.topNav{
+    height: 80px;   
+}
+.navbar-brand{
+    padding-top: 5px;
+    margin-top: 15px;
+}
+.categoryNav{
+    height: 59px;
+}
+.categoryTabs{
+    display: inline-block;
+    background: transparent;
+    height: 59px;
+    border-top: 0;
+    border-bottom: 0;
+    border-left: 0;
+    width: 107px;
+    border-bottom: 0 solid #1da1f2;
+    padding-bottom: 5px;
+}
+.categoryTabs:hover{
+    border-bottom-width: 5px;
+    padding-bottom: 0;
+    text-decoration: none;
+}
+.ctSearch{
+    margin: 0 auto;
+}
+#searchIcon{
+    font-size: 20px;
+}
+.ctItem{
+
 }

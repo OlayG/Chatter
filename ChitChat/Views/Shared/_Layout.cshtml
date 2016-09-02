@@ -6,7 +6,7 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
     <script type="text/javascript">
         var appInsights=window.appInsights||function(config){
             function r(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},u=document,e=window,o="script",s=u.createElement(o),i,f;for(s.src=config.url||"//az416426.vo.msecnd.net/scripts/a/ai.0.js",u.getElementsByTagName(o)[0].parentNode.appendChild(s),t.cookie=u.cookie,t.queue=[],i=["Event","Exception","Metric","PageView","Trace","Ajax"];i.length;)r("track"+i.pop());return r("setAuthenticatedUserContext"),r("clearAuthenticatedUserContext"),config.disableExceptionTracking||(i="onerror",r("_"+i),f=e[i],e[i]=function(config,r,u,e,o){var s=f&&f(config,r,u,e,o);return s!==!0&&t["_"+i](config,r,u,e,o),s}),t
@@ -19,25 +19,36 @@
     </script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+    <div id="ChitChatNavbar" class="navbar navbar-default navbar-fixed-top">
+        <div id="navbarContainer" class="container topNav">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a class="navbar-brand" href="@Url.Action("Index","Home")"><i id="twitterBird" class="fa fa-twitter" aria-hidden="true"></i></a>
+                @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
             </div>
+            <div class="navTitle"><h2>What's Happening</h2></div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+                @*<ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
+                </ul>*@
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
+        <div class="container-fluid" style="background-color: #fff;">
+            <div class="container categoryNav" id="navbarContainer">
+                <button class="categoryTabs">
+                    <div class="ctSearch"><i id="searchIcon" class="fa fa-search" aria-hidden="true"></i></div>
+                </button>
+                
+            </div>
+        </div>
+        
     </div>
     <div class="container body-content">
         @RenderBody()
@@ -50,5 +61,99 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script>
+        if (window.location.pathname == "/" || window.location.pathname == "/Home/Index") {
+            $(".topNav").css("height", 210);
+            $(".navTitle").css("top", 60);
+            ////var iScrollPos = 0;
+
+            ////$(document).scroll(function () {
+            ////    //debugger;
+            ////    //  grab the scroll amount and the window height
+            ////    var scrollAmount = $(window).scrollTop();
+            ////    var documentHeight = $(document).height();
+            ////    var topNavHeight = $(".topNav").height();
+            ////    //    calculate the percentage the user has scrolled down the page
+            ////    var scrollPercent = (scrollAmount / documentHeight) * 100;
+
+
+
+            ////    //function increaseHeight() { 
+            ////    if (topNavHeight >= 80) {
+            ////        topNavHeight--;
+            ////        $(".topNav").css({
+            ////            height: topNavHeight,
+            ////        });
+            ////    }
+            ////    //if ($(".topNav").height() <= 210 && scrollAmount > 0) {
+            ////    //    $(".topNav").css({
+            ////    //        height: $(".topNav").height() + scrollAmount,
+            ////    //    });
+            ////    //}
+
+
+            ////    //if ($(".navTitle").position().top >= 0) {
+            ////    //    $(".navTitle").css({
+            ////    //        top: 60 - scrollAmount,
+            ////    //    });
+            ////    //}
+
+                
+            ////    iScrollPos = scrollAmount;
+            ////    //}
+
+            ////});
+
+            //var iScrollPos = 0;
+            //$(window).scroll(function () {
+            //    var iCurScrollPos = $(this).scrollTop();
+            //    if (iCurScrollPos > iScrollPos) {
+
+            //        if (iCurScrollPos < 131) {
+            //            //$(".topNav").animate({
+            //                height: 210 - iCurScrollPos
+            //            //}, 0);
+            //            //$(".topNav").css("height", 210 - iCurScrollPos);
+            //            if (iCurScrollPos < 61)
+            //                $(".navTitle").css("top", 60 - iCurScrollPos);
+            //        }
+            //        //$("#ChitChatNavbar").css("height", 210);
+
+            //    } else {
+            //        $(".topNav").animate({
+            //            height: 80 
+            //        }, 0);
+            //        console.log(iScrollPos)
+            //    }
+            //    iScrollPos = iCurScrollPos;
+            //});
+
+            $(function () {
+                $(window).scroll(function () {
+                    var $myDiv = $('.topNav');
+                    var divHeight = $myDiv.height();
+                    var st = $(this).scrollTop();
+                    if (st <= 210 && divHeight == 210) {
+                        var offset = st - divHeight
+                        $myDiv.height(divHeight - );
+                        //if (st == 0) {
+                        //    $myDiv.hide();
+                        //} else {
+                        //    $myDiv.show();
+                        //}
+                    }
+                    
+                }).scroll();
+            })
+
+        }
+        $(".navTitle").css("right", (window.screen.width / 2) - 110);
+
+        
+        $(window).resize(function () {
+            $(".navTitle").css("right", (window.screen.width / 2) - 70);
+        });
+
+    </script>
 </body>
 </html>
