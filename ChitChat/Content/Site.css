@@ -1,8 +1,6 @@
 ﻿html{
-    height: 1000px;
 }
 body {
-    padding-top: 50px;
     padding-bottom: 20px;
     background-color: #f5f8fa;
 }
@@ -27,12 +25,23 @@ textarea {
     max-width: 280px;
 }
 
-#ChitChatNavbar{
-    background-color: #1da1f2;
+#twitterBird, #twitterBird1{
+    color: #1DA1F2;
+    font-size: 30px;
 }
-#twitterBird{
+#twitterBird1{
+    font-size: 20px;
+    margin-top: 8px;
     color: white;
-    font-size: 32px;
+    padding-right: 20px;
+}
+.navbar-brand.navRight{
+    border-bottom: 0px !important;
+    padding-top: 10px;
+}
+#twitterNavRight{
+    color: #8899a6;
+    font-size: 25px;
 }
 #registerLink, #loginLink{
     color: #fff;
@@ -42,6 +51,35 @@ textarea {
     font-weight: 200;
     padding: 10px 35px;
     margin-top: 15px;
+}
+#loginLink1{
+    text-align: center;
+    padding: 0 5px;
+    color: #fff;
+    background-color: #4786b3;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    height: 24px;
+    float: right;
+}
+#registerFormField{
+    max-width: 800px !important;
+    width: 500px;
+    border-radius: 0;
+}
+#submitRegister{
+    margin-top: 15px;
+    border-radius: 0px; 
+    max-width: 800px !important; 
+    width: 500px; 
+    color: #fff;
+    background-color: #4786b3;
+    border: 1px solid #2477b3;
+}
+#registerLink{
+    color: #1DA1F2;
+    border-color: #fff;
+    background: #fff;
 }
 #registerLink:hover, #loginLink:hover{
     background: #fff;
@@ -57,7 +95,8 @@ textarea {
 .navTitle{
     color: white;
     position: absolute;
-    margin-top: 15px;
+    margin-top: 70px;
+    margin-left: 300px
 }
 .navTitle h2{
     color: white;
@@ -70,17 +109,18 @@ textarea {
     padding:0; 
 }
 .topNav{
-    height: 80px;   
+    /*height: 210px;*/   
 }
 .navbar-brand{
-    padding-top: 5px;
-    margin-top: 15px;
+    padding: 5px 15px 10px;
+    border-bottom: 4px solid #1DA1F2;
 }
+
 .categoryNav{
     height: 59px;
 }
 .categoryTabs{
-    display: inline-block;
+    position: absolute;
     background: transparent;
     height: 59px;
     border-top: 0;
@@ -89,6 +129,30 @@ textarea {
     width: 107px;
     border-bottom: 0 solid #1da1f2;
     padding-bottom: 5px;
+}
+.categoryTabsUL li{
+    padding: 15px 10px 0 10px;
+}
+.categoryTabs1{
+    list-style: none;
+    display: inline-block;
+    border-top: 0;
+    border-bottom: 0;
+    border-left: 0;
+    width: 107px;
+    border-bottom: 0 solid #1da1f2;
+    padding-bottom: 5px;
+    text-align: center;
+    height: 59px;
+}
+.categoryTabs1 li{
+    
+
+}
+.categoryTabs1:hover{
+    border-bottom-width: 5px;
+    padding-bottom: 0;
+    text-decoration: none;
 }
 .categoryTabs:hover{
     border-bottom-width: 5px;
